@@ -16,3 +16,9 @@ exports.coustomerSignup = catchAsync(async (req, res, next) => {
 exports.coustomerLogin = catchAsync(async (req, res, next) => {
     res.status(200).render('coustomerLogin.html')  
 });
+
+exports.productDetail = catchAsync(async (req, res, next) => {
+    let productId = req.params.productId
+    let product = await Product.findOne({_id: productId})
+    res.status(200).render('productDetail.html', {product})  
+});

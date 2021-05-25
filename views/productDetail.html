@@ -1,0 +1,27 @@
+{%extends "base/base.html" %}
+
+{%block content%}
+<div class="container">
+    <div class="row align-items-start">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="/product/images/{{product.image}}" class="card-img-top" alt="img">
+            <div class="card-body">
+            <h5 class="card-title">{{product.productName}}</h5>
+            <p class="card-text">{{product.description}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">Rs- {{product.price}}/-</li>
+            </ul>
+            <div class="card-body">
+            <a href="#" class="card-link">Order</a>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+        <!-- One of three columns -->
+      </div>
+    </div>
+</div> 
+{%endblock%}
+

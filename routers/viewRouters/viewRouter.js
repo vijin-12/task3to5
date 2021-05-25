@@ -7,6 +7,6 @@ const coustomerController = require('../../controllers/coustomerController/coust
 router.get('/', coustomerController.isCoustomerLoggedIn, viewController.allProducts);
 router.get('/coustomerSignin', viewController.coustomerSignup);
 router.get('/coustomerLogin', viewController.coustomerLogin);
-
+router.get('/productDetail/:productId', viewController.productDetail);
 
 module.exports = router;
