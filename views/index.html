@@ -1,0 +1,31 @@
+{%extends "base/base.html" %}
+
+{%block content%}
+
+
+
+
+
+<div class="container">
+    <div class="row align-items-start">
+        {%for product in products%}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="/product/images/{{product.image}}" class="card-img-top" alt="img">
+                <div class="card-body">
+                <h5 class="card-title">{{product.productName}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">Rs- {{product.price}}/-</li>
+                </ul>
+                <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+        
+{%endblock%}
