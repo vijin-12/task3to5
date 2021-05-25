@@ -33,4 +33,11 @@ process.on('unhandledRejection', err => { // shutdown the server if any unhandle
       process.exit(1);
     });
 });
-  
+
+
+process.on('SIGTERM', () => {  // shutdown during heroku SIGTERM signal
+  console.log('👋 SIGTERM RECEIVED. Shutting down gracefully');
+  server.close(() => {
+    console.log('💥 Process terminated!');
+  });
+});
