@@ -76,6 +76,39 @@ exports.coustomerProtect = catchAsync(async (req, res, next) => {
 });
 
 
+exports.isCoustomerLoggedIn = async (req, res, next) => {
+    try{
+        if (req.cookies.jwt) {//1) getting token and check is there
+            token = req.cookies.jwt
+            //2) verification token
+            const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+            //3) checking if user still exists
+            const currentCoustomer = await Coustomer.findOne({ _id: decoded.id });
+            if (!currentCoustomer) { 
+                res.locals.coustomer = undefined;
+                return next();
+            };
+            //4) check if user changed password after the token issued
+            if (currentCoustomer.changedPasswordAfter(decoded.iat)) {
+                res.locals.coustomer = undefined;
+                return next()
+            };
+            res.locals.userType = decoded.userType
+            res.locals.coustomer = currentCoustomer.name
+            res.locals.coustomerId = currentCoustomer._id
+            return next()
+        }
+        res.locals.coustomer = undefined;
+        res.locals.userType = undefined
+        return next()
+    }catch{
+        // no user loged in block will work during log out or changing the json web token
+        res.locals.coustomer = undefined;
+        res.locals.userType = undefined
+        return next()
+    }
+};
+
 exports.logout = async (req, res) => {
     res.cookie('jwt', 'logout', {
         expires: new Date(Date.now + 10 * 1000),

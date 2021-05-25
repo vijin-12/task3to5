@@ -8,3 +8,7 @@ exports.allProducts = catchAsync(async (req, res, next) => {
 
     res.status(200).render('index.html', {products})  
 });
+
+exports.coustomerSignup = catchAsync(async (req, res, next) => {
+    res.status(200).render('coustomerSignup.html')  
+});

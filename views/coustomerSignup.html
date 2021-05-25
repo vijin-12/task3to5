@@ -1,0 +1,85 @@
+{%extends "base/base.html"%}
+
+{%block content%}
+<h3>signup page</h3>
+
+<br><br>
+<div class="container">
+    <div class="row">
+      <div class="col align-self-center">
+        <form class="row g-3 needs-validation" novalidate>
+            <div class="col-md-4">
+              <label for="validationCustom01" class="form-label">name</label>
+              <input type="text" class="form-control" id="name" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustom02" class="form-label">email</label>
+              <input type="email" class="form-control" id="email" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationCustomUsername" class="form-label">mobile number</label>
+              <div class="input-group has-validation">
+                <input type="number" class="form-control" id="mobileNumber" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Please choose a mobile number.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">password</label>
+                <input type="password" class="form-control" id="password" required>
+                <div class="invalid-feedback">
+                  Please provide a valid password.
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">password confirm</label>
+                <input type="password" class="form-control" id="passwordConfirm" required>
+                <div class="invalid-feedback">
+                  Please provide a valid password.
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom03" class="form-label">address line one</label>
+                <input type="text" class="form-control" id="addressLineOne" required>
+                <div class="invalid-feedback">
+                  Please provide a valid address.
+                </div>
+            </div>
+            <div class="col-md-3">
+              <label for="validationCustom03" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" required>
+              <div class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom03" class="form-label">State</label>
+                <input type="text" class="form-control" id="state" required>
+                <div class="invalid-feedback">
+                  Please provide a valid State.
+                </div>
+              </div>
+            <div class="col-md-3">
+              <label for="validationCustom05" class="form-label">Zip</label>
+              <input type="number" class="form-control" id="zip" required>
+              <div class="invalid-feedback">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" id='btn-signIn' type="submit">Submit form</button>
+            </div>
+          </form>
+      </div>
+    </div>
+</div>
+<script src='/js/coustomerSignin.js'></script>
+
+{%endblock%}
