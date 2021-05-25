@@ -12,3 +12,7 @@ exports.allProducts = catchAsync(async (req, res, next) => {
 exports.coustomerSignup = catchAsync(async (req, res, next) => {
     res.status(200).render('coustomerSignup.html')  
 });
+
+exports.coustomerLogin = catchAsync(async (req, res, next) => {
+    res.status(200).render('coustomerLogin.html')  
+});

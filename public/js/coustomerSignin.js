@@ -3,6 +3,7 @@ const btnSignIn = document.getElementById('btn-signIn')
 
 
 btnSignIn.addEventListener('click', async (e) => {
+    e.preventDefault()
     const name = document.getElementById("name").value
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
@@ -12,7 +13,7 @@ btnSignIn.addEventListener('click', async (e) => {
     const city = document.getElementById("city").value
     const state = document.getElementById("state").value
     const zip = document.getElementById("zip").value
-    e.preventDefault()
+
     if(!name || !email || !password || !passwordConfirm || !mobileNumber ||
         !addressLineOne  || !state || !city ||  !zip){
         showAlert('error', 'please provide all the fields')

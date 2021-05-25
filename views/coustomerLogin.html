@@ -1,0 +1,36 @@
+{%extends "base/base.html"%}
+
+{%block content%}
+<h3>login page</h3>
+
+<br><br>
+<div class="container">
+    <div class="row">
+      <div class="col align-self-center">
+        <form class="row g-3 needs-validation" novalidate>
+
+            <div class="col-md-4">
+              <label for="validationCustom02" class="form-label">email</label>
+              <input type="email" class="form-control" id="email" value="" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom03" class="form-label">password</label>
+                <input type="password" class="form-control" id="password" required>
+                <div class="invalid-feedback">
+                  Please provide a valid password.
+                </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" id='btn-logIn' type="submit">Submit form</button>
+            </div>
+          </form>
+      </div>
+    </div>
+</div>
+<script src='/js/coustomerLogin.js'></script>
+
+{%endblock%}
