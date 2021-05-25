@@ -34,7 +34,7 @@ btnSignIn.addEventListener('click', async (e) => {
 
 	}
     try {
-        const url = `http://localhost:8821/api/v1/coustomer/signup`
+        const url = `/api/v1/coustomer/signup`
         const res = await axios({
             method: 'POST',
             url: url,// only work if they are hosted in same platform or else you should type the full url link like this http://127.0.0.1:3000/api/v1/users/login

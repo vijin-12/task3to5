@@ -1,0 +1,40 @@
+{%extends "base/base.html"%}
+
+{%block content%}
+<div class="container">
+    <div class="row">
+      <div class="col align-self-center">
+        <form>
+            <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="ProductName" value="" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" value="" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="validationCustom01" class="form-label">price</label>
+                <input type="number" class="form-control" id="price" value="" required>
+                <div class="valid-feedback">
+                  Looks good!
+                </div>
+              </div>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">image</label>
+              <input type="file" class="form-control-file" id="image">
+            </div>
+            <div class="col-6 align-self-center"></div>
+                <button class="btn btn-primary" id='btn-create' type="submit">create Product</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{%endblock%}

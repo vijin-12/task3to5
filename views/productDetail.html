@@ -14,7 +14,8 @@
             <li class="list-group-item">Rs- {{product.price}}/-</li>
             </ul>
             <div class="card-body">
-            <a href="#" class="card-link">Order</a>
+            <a href="" id='btn-order' data-coustomerid='{{coustomerId}}' data-productid='{{product._id}}'
+            data-price='{{product.price}}' class="card-link">Order</a>
             </div>
         </div>
       </div>
@@ -23,5 +24,6 @@
       </div>
     </div>
 </div> 
+<script src="/js/createBooking.js"></script>
 {%endblock%}
 

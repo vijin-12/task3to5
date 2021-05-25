@@ -10,6 +10,7 @@ const globalErrorHandler = require('./controllers/errorController');
 
 const coustomerRouter = require('./routers/apiRouters/coustomerRouter.js')
 const productRouter = require('./routers/apiRouters/productRouter.js')
+const bookingRouter = require('./routers/apiRouters/bookingRouter.js')
 const viewRouter = require('./routers/viewRouters/viewRouter.js')
 
 const app = express();
@@ -45,6 +46,7 @@ app.use(cookieParser());
 
 app.use('/api/v1/coustomer', coustomerRouter)
 app.use('/api/v1/product', productRouter)
+app.use('/api/v1/booking', bookingRouter)
 
 app.use('/', viewRouter)
 

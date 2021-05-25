@@ -72,6 +72,7 @@ exports.coustomerProtect = catchAsync(async (req, res, next) => {
     req.coustomer = currentCoustomer;
     res.locals.userType = decoded.userType;
     res.locals.coustomer = currentCoustomer.name; // getting data in template 'pug'
+    res.locals.coustomerId = currentCoustomer._id
     next()
 });
 

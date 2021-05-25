@@ -11,7 +11,7 @@ exports.createProduct = catchAsync(async (req, res, next) => {
         image: req.file.filename
     })
 
-    res.status(200).json({
+    res.status(201).json({
         status: "success",
         product: newProduct
     });
