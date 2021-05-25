@@ -1,5 +1,5 @@
 async function logOut(){
-	let url = 'http://localhost:8821/api/v1/coustomer/logout'
+	let url = '/api/v1/coustomer/logout'
 	try {
         const res = await axios({
             method: 'GET',
